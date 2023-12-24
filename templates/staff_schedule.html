@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel= "stylesheet" href="{{url_for('static', filename='schedule.css')}}">
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <img src="{{url_for('static', filename='ssau.png')}}" style="width: 220px; height: 70px;">
+            <label class="navbar-brand">Расписание</label>
+            <form action="/search" class="form-inline">
+                <div class="row">
+                    <div class="col-8">
+                        <input class="form-control" type="search" placeholder="Поиск..." name="search_data">
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-outline-success" type="submit">Искать</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+        
+        <table class="table table-borderless week">
+            <tr>
+                <td align="left">
+                    <a href="/schedule/groups?groupId={{groupId}}&week={{weeks[0]}}" class="link-primary" style="margin-left: 100px;">< {{weeks[0]}} неделя</a>
+                </td>
+                <td align="center">
+                    {{weeks[1]}} неделя
+                </td>
+                <td align="right">
+                    <a href="/schedule/groups?groupId={{groupId}}&week={{weeks[2]}}" class="link-primary" style="margin-right: 100px;">{{weeks[2]}} неделя ></a>
+                </td>
+            </tr>
+        </table>
+
+        <table class="table table-bordered resizable">
+            <thead align="center">
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 10px">Время</p>
+                    </td>
+                    {% for day, date in (("понедельник", dates[0]), ("вторник", dates[1]), ("среда", dates[2]), ("четверг", dates[3]), ("пятница", dates[4]), ("суббота", dates[5])) %}
+                    <td>
+                        <p class="date">{{day}}</p>
+                        <p class="date" style="font-size: 12px;">{{date}}</p>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+            
+            <tbody align="center">
+            {% for i in range(length//7) %}
+            <tr style="width: 100%;">
+                <td class="time" style="width: 4%;">
+                    <span>{{cells[i*7]["time"][0]}}</span>
+                    <span>{{cells[i*7]["time"][1]}}</span>
+                </td>
+                {% for j in range(1, 7) %}
+                <td align="left" style="width: 16%;">
+                    <p class="lesson lesson_name" >{{cells[i*7+j]["name"]}}</p>
+                    <p class="lesson lesson_place">{{cells[i*7+j]["place"]}}</p>
+                    <p class="lesson lesson_group">{{cells[i*7+j]["group"]}}</p>
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+    </body>
+</html>
