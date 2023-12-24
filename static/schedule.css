@@ -1,0 +1,57 @@
+@media (width <= 700px) {
+    .resizable {
+        font-size: x-small;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table {
+    border: #a6d5fa
+}
+
+.week {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #2780e3;
+    font-size: 18px;
+}
+
+.date, .time {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgba(0,0,0,.7)
+}
+
+.lesson {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.lesson_name {
+    color: rgba(0,0,0,.85);
+    font-weight: 700;
+}
+
+.lesson_place {
+    color: rgba(0,0,0,.7);
+    font-size: 13px;
+}
+
+.lesson_teacher {
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+}
+
+.lesson_group {
+    color: rgba(0,0,0,.85);
+    font-size: 13px;
+    white-space: pre-wrap;
+}
