@@ -32,6 +32,17 @@
 
 ## Результаты
 
-![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/group.png)
+### Институты и факультеты
+![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/screenshots/institutes_and_faculties.png)
 
-![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/staff.png)
+### Квалификации
+![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/screenshots/qualifications.png)
+
+### Поиск
+![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/screenshots/search.png)
+
+### Расписание группы
+![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/screenshots/group_schedule.png)
+
+### Расписание преподавателя
+![alt text](https://github.com/WandererOfMiddle-earth/websec-2/blob/main/screenshots/staff_schedule.png)
