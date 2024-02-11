@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/>
+        <title>Расписание, {{title}} - Самарский университет</title>
+    </head>
+    <body>
+        <table class="header-table">
+            <tr>
+                <td align="left" style="width: 10%">
+                    <img class="image" src="{{url_for('static', filename='ssau.png')}}"/>
+                </td>
+                <td align="center" style="width: 65%">
+                    <label class="header-text">Группа {{title}}</label>
+                </td>
+                <td align="left" style="width: 25%">
+                    <form action="/search" autocomplete="off">
+                        <div class="container">
+                            <div>
+                                <input type="text" placeholder="Поиск..." name="search_data" required oninvalid="this.setCustomValidity('Введите номер группы или ФИО преподавателя')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Искать" style="margin-left: 6px"/>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table class="week-table">
+            <tr class="week-tr">
+                <td class="week-td" style="width: 8%" align="left">
+                    <a href="/schedule/group?groupId={{groupId}}&week={{weeks[0]}}" class="week-text">⭠ {{weeks[0]}} неделя</a>
+                </td>
+                <td style="background: #fff" style="width: 82%" align="center">
+                    <p class="week-text">{{weeks[1]}} неделя</p>
+                </td>
+                <td class="week-td" style="width: 8%" align="right">
+                    <a href="/schedule/group?groupId={{groupId}}&week={{weeks[2]}}" class="week-text">{{weeks[2]}} неделя ⭢</a>
+                </td>
+            </tr>
+        </table>
+        <table class="schedule-table">
+            <thead align="center">
+                <tr class="schedule-tr">
+                    <td class="schedule-td" style="width: 4%">
+                        <p class="schedule_TIME-text">Время</p>
+                    </td>
+                    {% for day, date in (("понедельник", dates[0]), ("вторник", dates[1]), ("среда", dates[2]), ("четверг", dates[3]), ("пятница", dates[4]), ("суббота", dates[5])) %}
+                    <td class="schedule-td" style="width: 16%">
+                        <p class="schedule_week_day-text">{{day}}</p>
+                        <p class="schedule_date-text">{{date}}</p>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody align="center">
+                {% for i in range(length//7) %}
+                <tr class="schedule-tr">
+                    <td class="schedule-td">
+                        <p class="schedule_time_interval-text">{{cells[i*7]["time"][0]}}</p>
+                        <p class="schedule_time_interval-text">{{cells[i*7]["time"][1]}}</p>
+                    </td>
+                    {% for j in range(1, 7) %}
+                    <td class="schedule-td" align="left">
+                        {% for k in range(cells[i*7+j]["count"]) %}
+                        <p class="schedule_lesson_name-text" >{{cells[i*7+j]["name"][k]}}</p>
+                        <p class="schedule_lesson_place-text">{{cells[i*7+j]["place"][k]}}</p>
+                        <p class="schedule_lesson_teacher-text">{{cells[i*7+j]["teacher"][k]}}</p>
+                        <p class="schedule_lesson_group-text">{{cells[i*7+j]["group"][k]}}</p>
+                        {% endfor %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
