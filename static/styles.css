@@ -1,0 +1,176 @@
+.container {
+    display: flex;
+}
+
+.image {
+    width: 220px;
+    height: 70px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+input[type="text"]
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+input[type="submit"]
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.header-table {
+    border: 2px solid #aadbfe;
+    background: #e3f2fd;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.header-text {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.faculty-header {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.faculty-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding-left: 20px;
+    width: 42%;
+}
+.faculty-text {
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 8px;
+}
+.faculty-tr, .faculty-td, .courses-tr, .courses-td, .groups-tr, .groups-td, 
+.search_result-tr, .search_result-td, .week-tr, .week-td {
+    background: #e3f2fd;
+    border: 2px solid #aadbfe;
+    border-radius: 10px;
+}
+.courses-table {
+    border-collapse: separate;
+    border-spacing: 3px 10px;
+    width: 36%;
+    padding-left: 20px;
+}
+.course-text {
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.qualification-text {
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.education_form-text {
+    margin-left: 40px;
+    font-size: 21px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.groups-table {
+    padding-left: 60px;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    width: 13%;
+}
+.group_number-text {
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.staff_search_result-table {
+    border-collapse: separate;
+    border-spacing: 0 4px;
+    width: 22%;
+    padding-left: 20px;
+}
+.groups_search_result-table {
+    border-collapse: separate;
+    border-spacing: 0 4px;
+    width: 10%;
+    padding-left: 20px;
+}
+.search-text {
+    margin-left: 5px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.week-table {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    width: 100%;
+    padding: 0 25px 10px 25px;
+}
+.week-text {
+    margin: 0 7px 0 7px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.schedule-table, .schedule-tr, .schedule-td {
+    border: 2px solid #aadbfe;
+    border-collapse: collapse;
+}
+.schedule-table {
+    width: 100%;
+}
+
+
+.schedule_TIME-text, .schedule_week_day-text, 
+.schedule_date-text, .schedule_time_interval-text {
+    margin: 0 0 0 0;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Times, serif;
+}
+.schedule_TIME-text {
+    font-size: 17px;
+}
+.schedule_week_day-text {
+    font-size: 17px;
+}
+.schedule_date-text {
+    font-size: 12px;
+}
+.schedule_time_interval-text {
+    font-size: 14px;
+}
+
+.schedule_lesson_name-text, .schedule_lesson_place-text, 
+.schedule_lesson_teacher-text, .schedule_lesson_group-text {
+    margin: 5px 10px 5px 10px;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Times, serif;
+}
+.schedule_lesson_name-text {
+    font-size: 17px;
+}
+.schedule_lesson_place-text {
+    font-size: 13px;
+}
+.schedule_lesson_teacher-text {
+    font-size: 14px;
+}
+.schedule_lesson_group-text {
+    font-size: 13px;
+    white-space: pre-wrap;
+}
